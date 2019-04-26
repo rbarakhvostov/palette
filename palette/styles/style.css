@@ -53,3 +53,46 @@ body {
 .title a:hover {
   color: #0cafb7;
 }
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color:#e5e6e8;
+  height: 600px;
+}
+
+.tool-menu {
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.tool-menu button {
+ height: 30px;
+ border: none;
+ border-radius: 20px;
+ background-color: #ffffff;
+ margin-bottom: 10px;
+ display: flex;
+ font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
+ font-size: 20px;
+ align-items: center;
+}
+
+.tool-menu button:last-child {
+  margin-bottom: 0;
+}
+
+button > span:first-child {
+  margin: 0 10px;
+  font-size: 15px;
+} 
+
+button:hover {
+  background-color: #0cafb730;
+}
+
+button:hover > span:first-child {
+  font-size: 20px;
+}
