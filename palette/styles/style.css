@@ -19,7 +19,8 @@ body {
 
 .header {
   max-width: 1400px;
-  margin: 10px auto;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .navigation {
