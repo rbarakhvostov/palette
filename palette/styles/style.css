@@ -83,11 +83,11 @@ body {
  outline: none;
 }
 
-.tool-menu button:last-child {
+.tool-menu > button:last-child {
   margin-bottom: 0;
 }
 
-button > span:first-child {
+.tool-menu button > span:first-child {
   margin-left: 10px;
   margin-right: 15px;
   font-size: 15px;
