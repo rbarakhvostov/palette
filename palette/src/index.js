@@ -25,7 +25,8 @@ const canvas = document.querySelector('.canvas');
 const transformation = document.querySelector('.transformation');
 function transform(event) {
   let target = event.target;
-  if (transformation.classList.contains('selected-tool')) {
+
+  if (transformation.classList.contains('selected-tool') && target !== this) {
     target.classList.toggle('transformation');
   }
 }
@@ -56,3 +57,14 @@ function setColor(event) {
 }
 
 predefinedColors.addEventListener('click', setColor);
+
+
+const paintBucket = document.querySelector('.paint-bucket');
+function fillFigure(event) {
+  let target = event.target;
+  if (paintBucket.classList.contains('selected-tool') && target !== this) {
+    target.style.backgroundColor = getComputedStyle(currentColor).backgroundColor;
+  }
+}
+
+canvas.addEventListener('click', fillFigure);
