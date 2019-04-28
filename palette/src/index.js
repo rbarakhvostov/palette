@@ -21,6 +21,8 @@ function selectTool(event) {
 const toolMenu = document.querySelector('.tool-menu');
 toolMenu.addEventListener('click', selectTool);
 
+
+
 const canvas = document.querySelector('.canvas');
 const transformation = document.querySelector('.transformation');
 function transform(event) {
@@ -68,3 +70,18 @@ function fillFigure(event) {
 }
 
 canvas.addEventListener('click', fillFigure);
+
+
+let colorPicker = document.querySelector('.color-picker');
+function chooseColor(event) {
+  let target = event.target;
+  if (getComputedStyle(currentColor).backgroundColor === getComputedStyle(target).backgroundColor) return;
+  if (colorPicker.classList.contains('selected-tool') && target !== this) {
+    previousColor.style.backgroundColor = getComputedStyle(currentColor).backgroundColor;
+    currentColor.style.backgroundColor = getComputedStyle(target).backgroundColor;
+  }
+}
+
+canvas.addEventListener('click', chooseColor)
+
+
