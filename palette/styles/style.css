@@ -57,17 +57,23 @@ body {
 
 .main {
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 70px auto 0;
   background-color:#e5e6e8;
-  position: relative;
   height: 540px;
+  display:grid;
+  justify-items: center;
+  align-items: center;
+  grid-column-gap: 30px;
+  grid-template-areas: 
+    "menu canvas"
+    "palette canvas";
 }
 
 .tool-menu {
   width: 180px;
   display: flex;
   flex-direction: column;
-  margin-top: 70px;
+  grid-area: menu;
 }
 
 .tool-menu > button {
@@ -104,7 +110,7 @@ button:hover > span:first-child {
 
 .palette {
   width: 180px;
-  margin-top: 70px;
+  grid-area: palette;
 }
 
 .current-color, .previous-color {
@@ -190,9 +196,7 @@ button:hover > span:first-child {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  position: absolute;
-  top: 0;
-  left: 750px;
+  grid-area: canvas;
 }
 
 .canvas div {
