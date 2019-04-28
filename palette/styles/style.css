@@ -107,23 +107,23 @@ button:hover > span:first-child {
   margin-top: 70px;
 }
 
-.current-color-selection, .previous-color-selection {
+.current-color, .previous-color {
   height: 30px;
   display: flex;
   align-items: center;
 }
 
-.previous-color-selection {
+.previous-color {
   margin-bottom: 20px;
   margin-top: 10px;
 }
 
-.current-color-selection span, .previous-color-selection span {
+.current-color span, .previous-color span {
   font-size: 20px;
   font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
 }
 
-.current-color, .previous-color {
+.assigned-current-color, .assigned-previous-color {
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -132,11 +132,11 @@ button:hover > span:first-child {
   margin: 0 10px;
 }
 
-.previous-color {
+.assigned-current-color {
   background-color: #008000;
 }
 
-.predefined-colors-selection {
+.predefined-colors {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -144,7 +144,7 @@ button:hover > span:first-child {
   align-items: center;
 }
 
-.predefined-colors-selection div {
+.predefined-colors div {
   width: 40px;
   height: 40px;
   border-radius: 50%;

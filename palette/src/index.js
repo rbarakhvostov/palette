@@ -42,3 +42,16 @@ document.addEventListener('click', function(event) {
 })
 */
 
+let currentColor = document.querySelector('.assigned-current-color');
+let previousColor = document.querySelector('.assigned-previous-color');
+let predefinedColors = document.querySelector('.predefined-colors');
+
+function setColor(event) {
+  let target = event.target;
+  if (target.tagName === 'DIV' && target !== this) {
+    previousColor.style.backgroundColor = getComputedStyle(currentColor).backgroundColor;
+    currentColor.style.backgroundColor = getComputedStyle(target).backgroundColor;
+  }
+}
+
+predefinedColors.addEventListener('click', setColor);
