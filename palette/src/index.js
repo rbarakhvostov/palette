@@ -45,8 +45,8 @@ document.addEventListener('click', function(event) {
 })
 */
 
-let currentColor = document.querySelector('.assigned-current-color');
-let previousColor = document.querySelector('.assigned-previous-color');
+let currentColor = document.querySelector('.current-color');
+let previousColor = document.querySelector('.previous-color');
 let predefinedColors = document.querySelector('.predefined-colors');
 
 function setColor(event) {

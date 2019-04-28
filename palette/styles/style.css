@@ -115,23 +115,23 @@ button:hover > span:first-child {
   grid-area: palette;
 }
 
-.current-color, .previous-color {
+.current-color-wrap, .previous-color-wrap {
   display: flex;
   align-items: center;
 }
 
-.previous-color {
+.previous-color-wrap {
   margin-bottom: 20px;
   margin-top: 10px;
 }
 
-.current-color span, .previous-color span {
+.current-color-wrap span, .previous-color-wrap span {
   font-size: 20px;
   font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
   user-select: none;
 }
 
-.assigned-current-color, .assigned-previous-color {
+.current-color, .previous-color {
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -139,7 +139,7 @@ button:hover > span:first-child {
   margin: 0 10px 0 0;
 }
 
-.assigned-current-color {
+.current-color {
   background-color: #008000;
 }
 
