@@ -5,18 +5,14 @@ function selectTool(event) {
       for (let i = 0, l = toolMenu.children.length; i < l; i++) {
         if (toolMenu.children[i].classList.contains('selected-tool')) {
           toolMenu.children[i].classList.remove('selected-tool');
-          /*toolState[toolMenu.children[i].dataset.name] = 0;*/
         }
       }
       target.classList.add('selected-tool');
-      /*toolState[target.dataset.name] = 1;*/
       return;
     }
     target = target.parentNode;
   }
 }
-
-/*const toolState = {}; */
 
 const toolMenu = document.querySelector('.tool-menu');
 toolMenu.addEventListener('click', selectTool);
@@ -35,15 +31,7 @@ function transform(event) {
 
 canvas.addEventListener('click', transform);
 
-/*
-document.addEventListener('click', function(event) {
-  let target = event.target;
-  const figures = [...canvas.children];
-  if (figures.every(() => i !== target)) {
 
-  }
-})
-*/
 
 let currentColor = document.querySelector('.current-color');
 let previousColor = document.querySelector('.previous-color');
@@ -85,3 +73,44 @@ function chooseColor(event) {
 canvas.addEventListener('click', chooseColor)
 
 
+//move tool
+
+const moveTool = document.querySelector('.movement');
+
+//shortcuts
+
+function removeSelected() {
+  for (let i = 0, l = toolMenu.children.length; i < l; i++) {
+    if (toolMenu.children[i].classList.contains('selected-tool')) {
+      toolMenu.children[i].classList.remove('selected-tool');
+    }
+  }
+};
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 'P'.charCodeAt()) {
+    removeSelected();
+    paintBucket.classList.add('selected-tool')
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 'C'.charCodeAt()) {
+    removeSelected();
+    colorPicker.classList.add('selected-tool')
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 'M'.charCodeAt()) {
+    removeSelected();
+    moveTool.classList.add('selected-tool')
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 'T'.charCodeAt()) {
+    removeSelected();
+    transformation.classList.add('selected-tool')
+  }
+})
