@@ -90,27 +90,52 @@ function removeSelected() {
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 'P'.charCodeAt()) {
     removeSelected();
-    paintBucket.classList.add('selected-tool')
+    paintBucket.classList.add('selected-tool');
+    canvas.style.cursor = 'url(assets/svg/paint-bucket.svg), auto';
   }
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 'C'.charCodeAt()) {
     removeSelected();
-    colorPicker.classList.add('selected-tool')
+    colorPicker.classList.add('selected-tool');
+    canvas.style.cursor = 'url(assets/svg/color-picker.svg), auto';
   }
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 'M'.charCodeAt()) {
     removeSelected();
-    moveTool.classList.add('selected-tool')
+    moveTool.classList.add('selected-tool');
+    canvas.style.cursor = 'url(assets/svg/move-tool.svg), auto';
   }
 });
 
 document.addEventListener('keydown', function(event) {
   if (event.keyCode === 'T'.charCodeAt()) {
     removeSelected();
-    transformation.classList.add('selected-tool')
+    transformation.classList.add('selected-tool');
+    canvas.style.cursor = 'url(assets/svg/transform-tool.svg), auto';
   }
-})
+});
+
+
+// cursors 
+
+function changeCursor() {
+  if (paintBucket.classList.contains('selected-tool')) {
+    this.style.cursor = 'url(assets/svg/paint-bucket.svg), auto';
+  }
+  if (colorPicker.classList.contains('selected-tool')) {
+    this.style.cursor = 'url(assets/svg/color-picker.svg), auto';
+  }
+  if (moveTool.classList.contains('selected-tool')) {
+    this.style.cursor = 'url(assets/svg/move-tool.svg), auto';
+  }
+  if (transformation.classList.contains('selected-tool')) {
+    this.style.cursor = 'url(assets/svg/transform-tool.svg), auto';
+  }
+}
+
+canvas.addEventListener('mouseover', changeCursor);
+
