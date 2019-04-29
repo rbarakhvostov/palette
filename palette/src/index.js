@@ -18,20 +18,23 @@ const toolMenu = document.querySelector('.tool-menu');
 toolMenu.addEventListener('click', selectTool);
 
 
-
 const canvas = document.querySelector('.canvas');
-const transformation = document.querySelector('.transformation');
+
+// transform tool
+const transformation = document.querySelector('.transform-tool');
 function transform(event) {
   let target = event.target;
 
-  if (transformation.classList.contains('selected-tool') && target !== this) {
+  if (transformation.classList.contains('selected-tool') 
+      && target !== this 
+      && !target.classList.contains('figure-wrap')) {
     target.classList.toggle('transformation');
   }
 }
 
 canvas.addEventListener('click', transform);
 
-
+// colors
 
 let currentColor = document.querySelector('.current-color');
 let previousColor = document.querySelector('.previous-color');
@@ -48,23 +51,29 @@ function setColor(event) {
 
 predefinedColors.addEventListener('click', setColor);
 
+// paint bucket
 
 const paintBucket = document.querySelector('.paint-bucket');
 function fillFigure(event) {
   let target = event.target;
-  if (paintBucket.classList.contains('selected-tool') && target !== this) {
+  if (paintBucket.classList.contains('selected-tool') 
+      && target !== this 
+      && !target.classList.contains('figure-wrap')) {
     target.style.backgroundColor = getComputedStyle(currentColor).backgroundColor;
   }
 }
 
 canvas.addEventListener('click', fillFigure);
 
+// color picker
 
-let colorPicker = document.querySelector('.color-picker');
+const colorPicker = document.querySelector('.color-picker');
 function chooseColor(event) {
   let target = event.target;
   if (getComputedStyle(currentColor).backgroundColor === getComputedStyle(target).backgroundColor) return;
-  if (colorPicker.classList.contains('selected-tool') && target !== this) {
+  if (colorPicker.classList.contains('selected-tool')
+      && target !== this 
+      && !target.classList.contains('figure-wrap')) {
     previousColor.style.backgroundColor = getComputedStyle(currentColor).backgroundColor;
     currentColor.style.backgroundColor = getComputedStyle(target).backgroundColor;
   }
@@ -75,7 +84,33 @@ canvas.addEventListener('click', chooseColor)
 
 //move tool
 
-const moveTool = document.querySelector('.movement');
+const moveTool = document.querySelector('.move-tool');
+function chooseFigure(event) {
+  let target = event.target;
+
+  if (moveTool.classList.contains('selected-tool') 
+      && target !== this 
+      && !target.classList.contains('figure-wrap')) {
+
+    let shiftY = event.pageY - target.getBoundingClientRect().top - pageYOffset;
+    let shiftX = event.pageX - target.getBoundingClientRect().left - pageXOffset;
+
+    function moveFigure(event) {
+      target.style.left = event.pageX - shiftX + 'px';
+      target.style.top = event.pageY - shiftY + 'px';
+    }
+
+    function cancelMove() {
+      document.removeEventListener('mousemove', moveFigure);
+      this.removeEventListener('mouseup', cancelMove);
+    }
+
+    target.style.position = 'absolute';
+    document.addEventListener('mousemove', moveFigure);
+    this.addEventListener('mouseup', cancelMove);
+  }
+}
+canvas.addEventListener('mousedown', chooseFigure);
 
 //shortcuts
 
