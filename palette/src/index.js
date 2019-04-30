@@ -92,6 +92,8 @@ function chooseFigure(event) {
       && target !== this 
       && !target.classList.contains('figure-wrap')) {
 
+    target.style.opacity = '0.4';
+    target.style.zIndex = '2';
     let shiftY = event.pageY - target.getBoundingClientRect().top - pageYOffset;
     let shiftX = event.pageX - target.getBoundingClientRect().left - pageXOffset;
 
@@ -103,6 +105,8 @@ function chooseFigure(event) {
     function cancelMove() {
       document.removeEventListener('mousemove', moveFigure);
       this.removeEventListener('mouseup', cancelMove);
+      target.style.opacity = '1';
+      target.style.zIndex = '1';
     }
 
     target.style.position = 'absolute';
@@ -110,6 +114,7 @@ function chooseFigure(event) {
     this.addEventListener('mouseup', cancelMove);
   }
 }
+
 canvas.addEventListener('mousedown', chooseFigure);
 
 //shortcuts
