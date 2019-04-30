@@ -96,6 +96,7 @@ body {
  outline: none;
  cursor: pointer;
  user-select: none;
+ position: relative;
 }
 
 .tool-menu > button:last-child {
@@ -108,12 +109,23 @@ body {
   font-size: 15px;
 } 
 
-button:hover {
+.tool-menu > button:hover {
   background-color: #0cafb730;
 }
 
-button:hover > span:first-child {
+.tool-menu > button:hover > span:first-child {
   font-size: 20px;
+}
+
+.tool-menu > button:hover:after {
+  content: attr(data-title);
+  color: #ff0000;
+  font-size: 15px;
+  left: 100%;
+  top: 0;
+  position: absolute;
+  font-family: "Roboto-Medium", Arial, Helvetica, sans-serif;
+  padding-left: 5px;
 }
 
 .palette {
@@ -193,7 +205,7 @@ button:hover > span:first-child {
 }
 
 .predefined-color-8 {
-  background-color: #ed8231;
+  background-color: #ffa500;
 }
 
 .canvas {
@@ -221,6 +233,6 @@ button:hover > span:first-child {
   border-radius: 50%;
 }
 
-.tool-menu .selected-tool {
+.tool-menu button.selected-tool {
   background-color: #0cafb7;
 }

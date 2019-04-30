@@ -156,12 +156,12 @@ document.addEventListener('keydown', function(event) {
 
 
 // cursors 
-const navigation = document.querySelector('.navigation');
+const header = document.querySelector('.header');
 const palette = document.querySelector('.palette');
 
 function changeCursor(event) {
   let target = event.target;
-  if (target === navigation || target === toolMenu || target === palette) {
+  if (target === header || target === toolMenu || target === palette) {
     target.style.cursor = 'auto';
   }
   if (paintBucket.classList.contains('selected-tool')) {
