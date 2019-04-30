@@ -78,7 +78,6 @@ function chooseFigure(event) {
   const { target } = event;
   const shiftY = event.pageY - target.getBoundingClientRect().top; // - pageYOffset
   const shiftX = event.pageX - target.getBoundingClientRect().left; // - pageXOffset
-
   function moveFigure(e) {
     target.style.left = `${e.pageX - shiftX}px`;
     target.style.top = `${e.pageY - shiftY}px`;
