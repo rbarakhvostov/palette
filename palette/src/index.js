@@ -184,4 +184,3 @@ function changeCursor(event) {
 }
 
 document.body.addEventListener('mouseover', changeCursor);
-

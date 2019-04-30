@@ -1,26 +1,23 @@
 @font-face {
   font-family: "Roboto-Regular";
-
   src: url(../assets/fonts/Roboto-Regular.woff2) format("woff2"),
-       url(../assets/fonts/Roboto-Regular.woff) format("woff");
+  url(../assets/fonts/Roboto-Regular.woff) format("woff");
 }
 
 @font-face {
   font-family: "Roboto-Medium";
-
   src: url(../assets/fonts/Roboto-Medium.woff2) format("woff2"),
-       url(../assets/fonts/Roboto-Medium.woff) format("woff");
+  url(../assets/fonts/Roboto-Medium.woff) format("woff");
 }
-
 
 html {
   height: 100%;
 }
 
 body {
-  background-color:#d4d6d4;
-  font-family: Arial, Helvetica, sans-serif;
   min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #d4d6d4;
 }
 
 .header {
@@ -32,19 +29,21 @@ body {
 .navigation {
   display: grid;
   grid-template-columns: 5% auto 5%;
-  justify-items: center;
   align-items: center;
+  justify-items: center;
   height: 50px;
   font-size: 25px;
   background-color: #ffffff;
   border-radius: 20px;
 }
 
-.burger-menu, .ellipsis {
+.burger-menu,
+.ellipsis {
   cursor: pointer;
 }
 
-.burger-menu:hover, .ellipsis:hover {
+.burger-menu:hover,
+.ellipsis:hover {
   font-size: 30px;
 }
 
@@ -52,51 +51,50 @@ body {
   font-family: "Roboto-Medium", Arial, Helvetica, sans-serif;
 }
 
-.title a {
+.title > a {
+  color: #000000;
   text-decoration: none;
-  color: black;
   user-select: none;
 }
 
-.title a:hover {
+.title > a:hover {
   color: #0cafb7;
 }
 
 .main {
-  max-width: 1400px;
-  margin: 70px auto 0;
-  background-color:#d4d6d4; /**/
-  height: 540px;
-  display:grid;
-  justify-items: center;
-  align-items: center;
-  grid-column-gap: 30px;
+  display: grid;
   grid-template-areas: 
     "menu canvas"
     "palette canvas";
+  grid-column-gap: 30px;
+  align-items: center;
+  justify-items: center;
+  max-width: 1400px;
+  height: 540px;
+  margin: 70px auto 0;
 }
 
 .tool-menu {
-  width: 180px;
   display: flex;
-  flex-direction: column;
   grid-area: menu;
+  flex-direction: column;
+  width: 180px;
 }
 
 .tool-menu > button {
- height: 30px;
- border: none;
- border-radius: 20px;
- background-color: #ffffff;
- margin-bottom: 10px;
- display: flex;
- font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
- font-size: 20px;
- align-items: center;
- outline: none;
- cursor: pointer;
- user-select: none;
- position: relative;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .tool-menu > button:last-child {
@@ -104,8 +102,8 @@ body {
 }
 
 .tool-menu > button > span:first-child {
-  margin-left: 10px;
   margin-right: 15px;
+  margin-left: 10px;
   font-size: 15px;
 } 
 
@@ -119,42 +117,45 @@ body {
 
 .tool-menu > button:hover:after {
   content: attr(data-title);
-  color: #ff0000;
-  font-size: 15px;
-  left: 100%;
-  top: 0;
   position: absolute;
-  font-family: "Roboto-Medium", Arial, Helvetica, sans-serif;
+  top: 0;
+  left: 100%;
   padding-left: 5px;
+  font-size: 15px;
+  font-family: "Roboto-Medium", Arial, Helvetica, sans-serif;
+  color: #ff0000;
 }
 
 .palette {
-  width: 180px;
   grid-area: palette;
+  width: 180px;
 }
 
-.current-color-wrap, .previous-color-wrap {
+.current-color-wrap,
+.previous-color-wrap {
   display: flex;
   align-items: center;
 }
 
 .previous-color-wrap {
-  margin-bottom: 20px;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-.current-color-wrap span, .previous-color-wrap span {
+.current-color-wrap span,
+.previous-color-wrap span {
   font-size: 20px;
   font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
   user-select: none;
 }
 
-.current-color, .previous-color {
-  height: 40px;
+.current-color,
+.previous-color {
   width: 40px;
-  border-radius: 50%;
-  background-color: #6a6c70;
+  height: 40px;
   margin: 0 10px 0 0;
+  background-color: #6a6c70;
+  border-radius: 50%;
 }
 
 .current-color {
@@ -163,13 +164,13 @@ body {
 
 .predefined-colors {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  height: 100px;
+  justify-content: space-between;
   align-items: center;
+  height: 100px;
 }
 
-.predefined-colors div {
+.predefined-colors > div {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -210,29 +211,29 @@ body {
 
 .canvas {
   display: flex;
-  width: 540px;
-  height: 540px;
+  grid-area: canvas;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  grid-area: canvas;
+  width: 540px;
+  height: 540px;
 }
 
 .figure-wrap {
-  height: 170px;
   width: 170px;
+  height: 170px;
 }
 
 .figure {
   width: 170px;
   height: 170px;
-  background-color:  #6a6c70; 
+  background-color: #6a6c70;
 }
 
 .transformation {
   border-radius: 50%;
 }
 
-.tool-menu button.selected-tool {
+.tool-menu > button.selected-tool {
   background-color: #0cafb7;
 }
