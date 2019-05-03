@@ -1,4 +1,5 @@
 const canvas = document.querySelector('.canvas');
+
 // tool selection
 const toolMenu = document.querySelector('.tool-menu');
 function selectTool(event) {
