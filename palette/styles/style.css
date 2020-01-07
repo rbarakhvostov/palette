@@ -1,32 +1,27 @@
 @font-face {
   font-family: "Roboto-Regular";
   src: url(../assets/fonts/Roboto-Regular.woff2) format("woff2"),
-  url(../assets/fonts/Roboto-Regular.woff) format("woff");
+       url(../assets/fonts/Roboto-Regular.woff) format("woff");
 }
-
 @font-face {
   font-family: "Roboto-Medium";
   src: url(../assets/fonts/Roboto-Medium.woff2) format("woff2"),
-  url(../assets/fonts/Roboto-Medium.woff) format("woff");
+       url(../assets/fonts/Roboto-Medium.woff) format("woff");
 }
-
 html {
   height: 100%;
 }
-
 body {
   min-height: 100%;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #d4d6d4;
   overflow: hidden;
 }
-
 .header {
   max-width: 1400px;
   margin: 0 auto;
   padding-top: 10px;
 }
-
 .navigation {
   display: grid;
   grid-template-columns: 5% auto 5%;
@@ -37,31 +32,25 @@ body {
   background-color: #ffffff;
   border-radius: 20px;
 }
-
 .burger-menu,
 .ellipsis {
   cursor: pointer;
 }
-
 .burger-menu:hover,
 .ellipsis:hover {
   font-size: 30px;
 }
-
 .title {
   font-family: "Roboto-Medium", Arial, Helvetica, sans-serif;
 }
-
 .title > a {
   color: #000000;
   text-decoration: none;
   user-select: none;
 }
-
 .title > a:hover {
   color: #0cafb7;
 }
-
 .main {
   display: grid;
   grid-template-areas: 
@@ -74,14 +63,12 @@ body {
   height: 540px;
   margin: 70px auto 0;
 }
-
 .tool-menu {
   display: flex;
   grid-area: menu;
   flex-direction: column;
   width: 180px;
 }
-
 .tool-menu > button {
   position: relative;
   display: flex;
@@ -97,25 +84,20 @@ body {
   cursor: pointer;
   user-select: none;
 }
-
 .tool-menu > button:last-child {
   margin-bottom: 0;
 }
-
 .tool-menu > button > span:first-child {
   margin-right: 15px;
   margin-left: 10px;
   font-size: 15px;
 } 
-
 .tool-menu > button:hover {
   background-color: #0cafb730;
 }
-
 .tool-menu > button:hover > span:first-child {
   font-size: 20px;
 }
-
 .tool-menu > button:hover:after {
   content: attr(data-title);
   position: absolute;
@@ -126,30 +108,25 @@ body {
   font-family: "Roboto-Medium", Arial, Helvetica, sans-serif;
   color: #ff0000;
 }
-
 .palette {
   grid-area: palette;
   width: 180px;
 }
-
 .current-color-wrap,
 .previous-color-wrap {
   display: flex;
   align-items: center;
 }
-
 .previous-color-wrap {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
 .current-color-wrap span,
 .previous-color-wrap span {
   font-size: 20px;
   font-family: "Roboto-Regular", Arial, Helvetica, sans-serif;
   user-select: none;
 }
-
 .current-color,
 .previous-color {
   width: 40px;
@@ -158,11 +135,9 @@ body {
   background-color: #6a6c70;
   border-radius: 50%;
 }
-
 .current-color {
   background-color: #008000;
 }
-
 .predefined-colors {
   display: flex;
   flex-wrap: wrap;
@@ -170,46 +145,36 @@ body {
   align-items: center;
   height: 100px;
 }
-
 .predefined-colors > div {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
 }
-
 .predefined-color-1 {
   background-color: #ff0000;
 }
-
 .predefined-color-2 {
   background-color: #ffff00;
 }
-
 .predefined-color-3 {
   background-color: #0000ff;
 }
-
 .predefined-color-4 {
   background-color: #ff00ff;
 }
-
 .predefined-color-5 {
   background-color: #ffffff;
 }
-
 .predefined-color-6 {
   background-color: #008080;
 }
-
 .predefined-color-7 {
   background-color: #008000;
 }
-
 .predefined-color-8 {
   background-color: #ffa500;
 }
-
 .canvas {
   display: flex;
   grid-area: canvas;
@@ -219,22 +184,18 @@ body {
   width: 540px;
   height: 540px;
 }
-
 .figure-wrap {
   width: 170px;
   height: 170px;
 }
-
 .figure {
   width: 170px;
   height: 170px;
   background-color: #6a6c70;
 }
-
 .transformation {
   border-radius: 50%;
 }
-
 .tool-menu > button.selected-tool {
   background-color: #0cafb7;
 }
