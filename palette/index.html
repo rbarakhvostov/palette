@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CodeJam-Palette</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navigation">
+      <span class="fas fa-bars burger-menu"></span>
+      <h1 class="title"><a href="#">CodeJam - Palette</a></h1>
+      <span class="fas fa-ellipsis-v ellipsis"></span>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="tool-menu">
+      <button class="paint-bucket" data-title="[P]"><span class="fas fa-fill-drip"></span><span>Paint bucket</span></button>
+      <button class="color-picker" data-title="[C]"><span class="fas fa-eye-dropper"></span><span>Color picker</span></button>
+      <button class="move-tool" data-title="[M]"><span class="fas fa-arrows-alt"></span><span>Move</span></button>
+      <button class="transform-tool" data-title="[T]"><span class="fas fa-exchange-alt"></span><span>Transform</span></button>
+    </div>
+    <div class="palette">
+      <div class="current-color-wrap">
+        <div class="current-color"></div>
+        <span>Current color</span>
+      </div>
+      <div class="previous-color-wrap">
+        <div class="previous-color"></div>
+        <span>Previous color</span>
+      </div>
+      <div class="predefined-colors">
+        <div class="predefined-color-1"></div>
+        <div class="predefined-color-2"></div>
+        <div class="predefined-color-3"></div>
+        <div class="predefined-color-4"></div>
+        <div class="predefined-color-5"></div>
+        <div class="predefined-color-6"></div>
+        <div class="predefined-color-7"></div>
+        <div class="predefined-color-8"></div>
+      </div>
+    </div>
+    <div class="canvas">
+      <div class="figure-wrap"><div class="figure figure-1"></div></div>
+      <div class="figure-wrap"><div class="figure figure-2"></div></div>
+      <div class="figure-wrap"><div class="figure figure-3"></div></div>
+      <div class="figure-wrap"><div class="figure figure-4"></div></div>
+      <div class="figure-wrap"><div class="figure figure-5"></div></div>
+      <div class="figure-wrap"><div class="figure figure-6"></div></div>
+      <div class="figure-wrap"><div class="figure figure-7"></div></div>
+      <div class="figure-wrap"><div class="figure figure-8"></div></div>
+      <div class="figure-wrap"><div class="figure figure-9"></div></div>
+    </div>
+  </main>
+  <script src="src/index.js"></script>
+</body>
+</html>
